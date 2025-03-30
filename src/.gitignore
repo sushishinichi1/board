@@ -1,15 +1,26 @@
+# Node.js 関連
 /node_modules
+/npm-debug.log
+/yarn-error.log
+
+# Laravel 関連
+/vendor
+/bootstrap/cache
+/storage
+/storage/*.key
 /public/hot
 /public/storage
-/storage/*.key
-/vendor
 .env
-.env.backup
+.env.*
 .phpunit.result.cache
+
+# Docker 関連
 docker-compose.override.yml
+
+# Homestead
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
+
+# IDE 関連
 /.idea
 /.vscode
