@@ -13,7 +13,7 @@
 .env
 .env.*
 .phpunit.result.cache
-
+src/artisan
 # Docker 関連
 docker-compose.override.yml
 
