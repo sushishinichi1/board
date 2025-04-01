@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class BoardController extends Controller
 {
+    protected $board;
+
+    public function __construct(Board $board)
+    {
+    }
+
     public function view()
     {
         $boards = Board::all();
