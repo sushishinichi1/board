@@ -13,6 +13,6 @@ Route::prefix('/board')->group(function () {
     Route::post('/store', [BoardController::class, 'store'])->name('board.store');
     Route::get('/show/{id}', [BoardController::class, 'show'])->name('board.show');
     Route::get('/edit/{id}', [BoardController::class, 'edit'])->name('board.edit');
-    Route::post('/update/{id}', [BoardController::class, 'update'])->name('board.update');
-    Route::get('/destroy/{id}', [BoardController::class, 'destroy'])->name('board.destroy');
+    Route::put('/update/{board}', [BoardController::class, 'update'])->name('board.update');
+    Route::delete('/destroy/{board}', [BoardController::class, 'destroy'])->name('board.destroy');
 });
