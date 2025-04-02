@@ -40,15 +40,16 @@ class BoardController extends Controller
         return redirect()->route('board.view')->with('success', '投稿が作成されました');
     }
 
-    public function show(Board $board)
+    public function show(Board $id)
     {
-        return view('board.show', compact('board'));
+        
+        return view('show', compact('board'));
     }
 
     public function edit($id)
     {
-        dd($id);
-        return view('board.edit', compact('board'));
+        $board = Board::findOrFail($id); // ← IDで1件取得（なければ404）
+        return view('edit', compact('board'));
     }
 
     public function update(Request $request, Board $board)
@@ -60,13 +61,13 @@ class BoardController extends Controller
 
         $board->update($request->all());
 
-        return redirect()->route('boards.index')->with('success', '投稿が更新されました');
+        return redirect()->route('board.view')->with('success', '投稿が更新されました');
     }
 
     public function destroy(Board $board)
     {
         $board->delete();
-        return redirect()->route('boards.index')->with('success', '投稿が削除されました');
+        return redirect()->route('board.view')->with('success', '投稿が削除されました');
     }
 }
 
