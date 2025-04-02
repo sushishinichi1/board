@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('content')
     <div style="width: 100%; text-align: center;">
         <h1>新しい掲示板を作成</h1>
